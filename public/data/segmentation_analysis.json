@@ -1,28 +1,49 @@
 {
   "Global": {
-    "By Type": {
-      "Sub-Normothermic Perfusion (20–34°C)": {},
-      "Warm or Normothermic Perfusion (35–37°C)": {}
+    "By Equipment Type": {
+      "Antennas": {},
+      "Transceivers & Modulators/Demodulators": {},
+      "RF Equipment": {},
+      "Baseband Equipment (Routers, Switches, Encoders, Decoders)": {},
+      "Tracking, Telemetry & Command (TT&C) Systems": {},
+      "Monitoring & Control Systems": {},
+      "Test & Measurement Equipment": {},
+      "Others (Cooling Systems, Power Supplies, Backup Systems, etc.)": {}
     },
-    "By Organ Type": {
-      "Liver": {},
-      "Heart": {},
-      "Lung": {},
-      "Kidney": {},
-      "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": {}
+    "By Frequency Band": {
+      "UHF/VHF Band": {},
+      "L-Band": {},
+      "S-Band": {},
+      "X-Band": {},
+      "Others (Ku-Band, C-Band, etc.)": {}
     },
-    "Application / Use Case": {
-      "Organ Preservation": {},
-      "Viability Assessment": {},
-      "Physiologic Transport": {},
-      "Reconditioning Marginal Organs": {},
-      "Others (Research Use / Protocol development)": {}
+    "By Orbit Type Supported": {
+      "Low Earth Orbit (LEO)": {},
+      "Medium Earth Orbit (MEO)": {},
+      "Geostationary Orbit (GEO)": {},
+      "Highly Elliptical Orbit (HEO)": {}
+    },
+    "By Ground Station Type": {
+      "Fixed Ground Stations": {},
+      "Mobile Ground Stations": {}
     },
     "By End User": {
-      "Hospitals & Clinics": {},
-      "Specialty Clinic/Centers": {},
-      "Transplant Centers": {},
-      "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": {}
+      "Satellite Operators & Telcos": {},
+      "Government & Military": {},
+      "Enterprises": {},
+      "Others (Research & Academic Institutions, etc.)": {}
+    },
+    "By Ownership Model": {
+      "Private Ground Stations": {},
+      "Government-Owned Stations": {},
+      "Shared/Consortium Models": {}
+    },
+    "By Application": {
+      "Communications": {},
+      "Earth Observation / Remote Sensing": {},
+      "Navigation & GNSS Augmentation": {},
+      "Command & Control / TT&C (Tracking, Telemetry & Control)": {},
+      "Defense, Surveillance & Intelligence": {}
     },
     "By Region": {
       "North America": {
