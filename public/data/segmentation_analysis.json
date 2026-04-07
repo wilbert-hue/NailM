@@ -1,28 +1,37 @@
 {
   "Global": {
-    "By Type": {
-      "Sub-Normothermic Perfusion (20–34°C)": {},
-      "Warm or Normothermic Perfusion (35–37°C)": {}
+    "By Product Component": {
+      "Acrylic Polymer Powders": {},
+      "Acrylic Liquids / Monomers": {},
+      "Prep & Adhesion Products": {},
+      "Extension Support Products": {},
+      "Acrylic Nail Kits / System Bundles": {},
+      "Removal & Aftercare Products": {}
     },
-    "By Organ Type": {
-      "Liver": {},
-      "Heart": {},
-      "Lung": {},
-      "Kidney": {},
-      "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": {}
+    "By Application": {
+      "Full Set Acrylic Extensions": {},
+      "Acrylic Overlays on Natural Nails": {},
+      "Refill / Rebalance Services": {},
+      "Nail Repair / Reconstruction": {},
+      "Acrylic Nail Art / 3D Design": {}
     },
-    "Application / Use Case": {
-      "Organ Preservation": {},
-      "Viability Assessment": {},
-      "Physiologic Transport": {},
-      "Reconditioning Marginal Organs": {},
-      "Others (Research Use / Protocol development)": {}
+    "By Extension Construction Method": {
+      "Tip-Based Extensions": {},
+      "Sculpted / Form-Based Extensions": {},
+      "Overlay-Only Applications": {}
     },
     "By End User": {
-      "Hospitals & Clinics": {},
-      "Specialty Clinic/Centers": {},
-      "Transplant Centers": {},
-      "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": {}
+      "Professional Nail Salons": {},
+      "Independent Nail Technicians / Nail Artists": {},
+      "Nail Schools / Academies": {},
+      "At-Home / DIY Users": {},
+      "Brands / Private Label Buyers": {}
+    },
+    "By Sales Channel": {
+      "Offline Distributors (B2B)": {},
+      "B2B - Online Market Places": {},
+      "Offline Distributor/Retailers (B2C)": {},
+      "Online D2C Channels (Online Market Places)": {}
     },
     "By Region": {
       "North America": {

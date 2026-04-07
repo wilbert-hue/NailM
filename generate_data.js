@@ -15,40 +15,49 @@ const regions = {
 
 // New segment definitions with market share splits (proportions within each segment type)
 const segmentTypes = {
-  "By Type": {
-    "Sub-Normothermic Perfusion (20–34°C)": 0.55,
-    "Warm or Normothermic Perfusion (35–37°C)": 0.45
+  "By Product Component": {
+    "Acrylic Polymer Powders": 0.30,
+    "Acrylic Liquids / Monomers": 0.22,
+    "Prep & Adhesion Products": 0.12,
+    "Extension Support Products": 0.13,
+    "Acrylic Nail Kits / System Bundles": 0.15,
+    "Removal & Aftercare Products": 0.08
   },
-  "By Organ Type": {
-    "Liver": 0.35,
-    "Heart": 0.22,
-    "Lung": 0.18,
-    "Kidney": 0.15,
-    "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": 0.10
+  "By Application": {
+    "Full Set Acrylic Extensions": 0.35,
+    "Acrylic Overlays on Natural Nails": 0.22,
+    "Refill / Rebalance Services": 0.20,
+    "Nail Repair / Reconstruction": 0.13,
+    "Acrylic Nail Art / 3D Design": 0.10
   },
-  "Application / Use Case": {
-    "Organ Preservation": 0.30,
-    "Viability Assessment": 0.25,
-    "Physiologic Transport": 0.20,
-    "Reconditioning Marginal Organs": 0.15,
-    "Others (Research Use / Protocol development)": 0.10
+  "By Extension Construction Method": {
+    "Tip-Based Extensions": 0.45,
+    "Sculpted / Form-Based Extensions": 0.35,
+    "Overlay-Only Applications": 0.20
   },
   "By End User": {
-    "Hospitals & Clinics": 0.40,
-    "Specialty Clinic/Centers": 0.25,
-    "Transplant Centers": 0.25,
-    "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": 0.10
+    "Professional Nail Salons": 0.45,
+    "Independent Nail Technicians / Nail Artists": 0.22,
+    "Nail Schools / Academies": 0.10,
+    "At-Home / DIY Users": 0.15,
+    "Brands / Private Label Buyers": 0.08
+  },
+  "By Sales Channel": {
+    "Offline Distributors (B2B)": 0.35,
+    "B2B - Online Market Places": 0.20,
+    "Offline Distributor/Retailers (B2C)": 0.25,
+    "Online D2C Channels (Online Market Places)": 0.20
   }
 };
 
 // Regional base values (USD Million) for 2021 - total market per region
-// Global Normothermic Machine Perfusion market ~$300M in 2021, growing ~12% CAGR
+// Global Acrylic Nail Extensions market ~$1.6B in 2021, growing ~7% CAGR
 const regionBaseValues = {
-  "North America": 120,
-  "Europe": 90,
-  "Asia Pacific": 50,
-  "Latin America": 20,
-  "Middle East & Africa": 15
+  "North America": 560,
+  "Europe": 420,
+  "Asia Pacific": 380,
+  "Latin America": 140,
+  "Middle East & Africa": 90
 };
 
 // Country share within region (must sum to ~1.0)
@@ -62,43 +71,52 @@ const countryShares = {
 
 // Growth rates (CAGR) per region - slightly different for variety
 const regionGrowthRates = {
-  "North America": 0.115,
-  "Europe": 0.108,
-  "Asia Pacific": 0.145,
-  "Latin America": 0.125,
-  "Middle East & Africa": 0.118
+  "North America": 0.068,
+  "Europe": 0.062,
+  "Asia Pacific": 0.092,
+  "Latin America": 0.078,
+  "Middle East & Africa": 0.082
 };
 
 // Segment-specific growth multipliers (relative to regional base CAGR)
 const segmentGrowthMultipliers = {
-  "By Type": {
-    "Sub-Normothermic Perfusion (20–34°C)": 0.95,
-    "Warm or Normothermic Perfusion (35–37°C)": 1.07
+  "By Product Component": {
+    "Acrylic Polymer Powders": 0.98,
+    "Acrylic Liquids / Monomers": 1.00,
+    "Prep & Adhesion Products": 1.05,
+    "Extension Support Products": 1.08,
+    "Acrylic Nail Kits / System Bundles": 1.12,
+    "Removal & Aftercare Products": 1.04
   },
-  "By Organ Type": {
-    "Liver": 1.08,
-    "Heart": 1.05,
-    "Lung": 1.12,
-    "Kidney": 0.95,
-    "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": 1.20
+  "By Application": {
+    "Full Set Acrylic Extensions": 1.02,
+    "Acrylic Overlays on Natural Nails": 1.06,
+    "Refill / Rebalance Services": 0.96,
+    "Nail Repair / Reconstruction": 1.04,
+    "Acrylic Nail Art / 3D Design": 1.15
   },
-  "Application / Use Case": {
-    "Organ Preservation": 0.92,
-    "Viability Assessment": 1.15,
-    "Physiologic Transport": 1.05,
-    "Reconditioning Marginal Organs": 1.18,
-    "Others (Research Use / Protocol development)": 1.10
+  "By Extension Construction Method": {
+    "Tip-Based Extensions": 1.05,
+    "Sculpted / Form-Based Extensions": 0.97,
+    "Overlay-Only Applications": 1.03
   },
   "By End User": {
-    "Hospitals & Clinics": 0.98,
-    "Specialty Clinic/Centers": 1.10,
-    "Transplant Centers": 1.08,
-    "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": 1.05
+    "Professional Nail Salons": 0.98,
+    "Independent Nail Technicians / Nail Artists": 1.08,
+    "Nail Schools / Academies": 1.04,
+    "At-Home / DIY Users": 1.18,
+    "Brands / Private Label Buyers": 1.10
+  },
+  "By Sales Channel": {
+    "Offline Distributors (B2B)": 0.94,
+    "B2B - Online Market Places": 1.12,
+    "Offline Distributor/Retailers (B2C)": 0.96,
+    "Online D2C Channels (Online Market Places)": 1.20
   }
 };
 
-// Volume multiplier: units per USD Million (rough: ~500 units per $1M for perfusion devices)
-const volumePerMillionUSD = 480;
+// Volume multiplier: units per USD Million (~12,000 units per $1M for nail products)
+const volumePerMillionUSD = 12000;
 
 // Seeded pseudo-random for reproducibility
 let seed = 42;
