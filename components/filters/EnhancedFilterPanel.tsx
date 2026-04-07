@@ -277,16 +277,6 @@ export function EnhancedFilterPanel() {
           >
             Value
           </button>
-          <button
-            onClick={() => updateFilters({ dataType: 'volume' })}
-            className={`flex-1 px-3 py-1.5 text-sm rounded ${
-              filters.dataType === 'volume'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-black hover:bg-gray-200'
-            }`}
-          >
-            Volume
-          </button>
         </div>
       </div>
 
