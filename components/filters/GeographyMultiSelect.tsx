@@ -35,13 +35,31 @@ export function GeographyMultiSelect() {
     }
 
     const geo = data.dimensions.geographies
-    const globalItems = geo.global || []
-    const regions = geo.regions || []
-    const countries = geo.countries || {}
-    const hasHierarchy = regions.length > 0
+    const countriesMap = geo.countries || {}
     const flatOptions = geo.all_geographies || []
+    const allChildCountries = new Set(Object.values(countriesMap).flat())
 
-    return { globalItems, regions, countries, hasHierarchy, flatOptions }
+    // If countriesMap has keys that appear in geo.global, the API put region-parents
+    // in geo.global and leaf countries in geo.regions. Re-derive the hierarchy:
+    //   globalItems = geo.global items with no children (e.g. "Global")
+    //   regions     = geo.global items that ARE parents in countriesMap
+    const parentRegions = Object.keys(countriesMap)
+    const parentRegionsInGlobal = parentRegions.filter(r => (geo.global || []).includes(r))
+
+    let regions: string[]
+    let globalItems: string[]
+
+    if (parentRegionsInGlobal.length > 0) {
+      regions = parentRegionsInGlobal
+      globalItems = (geo.global || []).filter(g => !parentRegions.includes(g) && !allChildCountries.has(g))
+    } else {
+      regions = geo.regions || []
+      globalItems = geo.global || []
+    }
+
+    const hasHierarchy = regions.length > 0
+
+    return { globalItems, regions, countries: countriesMap, hasHierarchy, flatOptions }
   }, [data])
 
   // Filter items based on search

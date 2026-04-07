@@ -35,9 +35,9 @@ export function createMockData(): ComparisonData {
         all_geographies: ['Global']
       },
       segments: {
-        'By End-Use*Product Type': {
-          type: 'hierarchical',
-          items: [],
+        'By Equipment Type': {
+          type: 'flat',
+          items: ['Antennas', 'Transceivers & Modulators/Demodulators', 'RF Equipment', 'Baseband Equipment (Routers, Switches, Encoders, Decoders)', 'Tracking, Telemetry & Command (TT&C) Systems', 'Monitoring & Control Systems', 'Test & Measurement Equipment', 'Others (Cooling Systems, Power Supplies, Backup Systems, etc.)'],
           hierarchy: {},
           b2b_hierarchy: {},
           b2c_hierarchy: {},
