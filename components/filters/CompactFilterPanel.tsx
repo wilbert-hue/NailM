@@ -228,16 +228,6 @@ export function CompactFilterPanel() {
           >
             Value
           </button>
-          <button
-            onClick={() => updateFilters({ dataType: 'volume' })}
-            className={`flex-1 px-2 py-1 text-xs rounded ${
-              filters.dataType === 'volume'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-black hover:bg-gray-200'
-            }`}
-          >
-            Volume
-          </button>
         </div>
       </div>
 
